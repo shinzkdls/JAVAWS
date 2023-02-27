@@ -37,35 +37,42 @@ public class Ws {
 				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
 				// 배열 정보를 출력한다.
 				// 배결의 합과 평균을 출력한다.
+				System.out.println("5~9 사이의 숫자를 2개입력해주세요.");
+				int a;
+				int b;
 				while (true) {
-					System.out.println("5~9 사이의 숫자를 2개입력해주세요.");
-					int a = sc.nextInt();
+					System.out.println("첫번째 숫자 입력");
+					a = sc.nextInt();
 					if (a < 5 || a > 9) {
 						System.out.println("잘못된 입력 범위입니다.");
 						continue;
 					}
-					int b = sc.nextInt();
+					break;
+				}
+				while (true) {
+					System.out.println("두번째 숫자 입력");
+					b = sc.nextInt();
 					if (b < 5 || b > 9) {
 						System.out.println("잘못된 입력 범위입니다.");
 						continue;
 					}
-					int[][] arr = new int[a][b];
-					int sum = 0;
-					for (int i = 0; i < arr.length; i++) {
-						for (int j = 0; j < arr[i].length; j++) {
-							arr[i][j] = new Random().nextInt(9) + 1;
-							System.out.print(arr[i][j] + " ");
-							sum = sum + arr[i][j];
-						}
-						System.out.println("");
+					break;
+				}
+				int[][] arr = new int[a][b];
+				int sum = 0;
+				for (int i = 0; i < arr.length; i++) {
+					for (int j = 0; j < arr[i].length; j++) {
+						arr[i][j] = new Random().nextInt(9) + 1;
+						System.out.print(arr[i][j] + " ");
+						sum = sum + arr[i][j];
 					}
 					System.out.println("");
-					double avg = (1.0 * sum) / (a * b);
-					System.out.println("2중 배열의 합: " + sum);
-					System.out.println("2중 배열의 평균: " + avg);
-					System.out.println("");
-					break;
-				} // a4 while 종료
+				}
+				System.out.println("");
+				double avg = (1.0 * sum) / (a * b);
+				System.out.println("2중 배열의 합: " + sum);
+				System.out.println("2중 배열의 평균: " + avg);
+				System.out.println("");
 			} else {
 				System.out.println("Invalid Command..");
 				System.out.println("Tri Again..");
