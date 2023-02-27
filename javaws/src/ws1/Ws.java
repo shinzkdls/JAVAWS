@@ -1,5 +1,7 @@
 package ws1;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Ws {
@@ -13,17 +15,54 @@ public class Ws {
 				System.out.println("Quit..");
 				break;
 			} else if (cmd.equals("a1")) {
-				System.out.println("Select..");
-
+				// 5~9까지의 숫자를 입력 받는다.
+				// 입력 받은 숫자만큼 배열을 생성 하고
+				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
+				// 배열 정보를 출력한다.
+				// 배결의 합과 평균을 출력한다.
 			} else if (cmd.equals("a2")) {
-				System.out.println("Select..");
-
+				// 5~9까지의 숫자를 입력 받는다.
+				// 입력 받은 숫자만큼 배열을 생성 하고
+				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
+				// 배열 정보를 출력한다.
+				// 짝수 번재 숫자들의 합과 평균을 출력한다.
 			} else if (cmd.equals("a3")) {
-				System.out.println("Select..");
+				// 5~9까지의 숫자를 입력 받는다.
+				// 입력 받은 숫자만큼 배열을 생성 하고
+				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
+				// 배열 정보를 출력한다.
+				// 짝수값만의 합과 평균을 출력한다.
+				System.out.println("5~9사이의 숫자를 입력해주세요.");
+				int a = sc.nextInt();
+				int[] a3 = new int [a];
+				Random r = new Random();
+				
+				for (int i=0 ; i<a3.length ; i++) {
+					a3[i] = r.nextInt(9)+1;
+				}
 
+				System.out.println(Arrays.toString(a3));
+
+				int sum = 0; 
+				double avg = 0.0;
+				int cnt = 0;
+				for (int data:a3) {
+					if( data%2==0) {
+						sum += data;
+						cnt++;
+					}
+				}
+				avg = sum*(1.0) / cnt ;
+				
+				System.out.printf(" \n 짝수값의 합 : %d, 짝수값의 평균 : %f \n ", sum, avg);
+				
+			
 			} else if (cmd.equals("a4")) {
-				System.out.println("Select..");
-
+				// 5~9까지의 숫자를 2개 입력 받는다.
+				// 2차원 배열을 만든다.
+				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
+				// 배열 정보를 출력한다.
+				// 배결의 합과 평균을 출력한다.
 			} else {
 				System.out.println("Invalid Command..");
 				System.out.println("Tri Again..");
