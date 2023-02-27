@@ -60,7 +60,7 @@ public class Ws {
 				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
 				Random r = new Random();
 
-				for (int i = 0; i < arr.length; i++) {
+				for (int i = 1; i < arr.length; i++) {
 					arr[i] = r.nextInt(9) + 1;
 				}
 
@@ -72,8 +72,10 @@ public class Ws {
 				double avg = 0.0;
 				int cnt = 0;
 
-				for (int i = 0; i < arr.length; i++) {
-					if (i % 2 == 0) {
+				
+				for (int i=0; i <arr.length ; i++) {
+					if (i%2 != 0) {
+
 						sum += arr[i];
 						cnt++;
 					}
@@ -87,13 +89,27 @@ public class Ws {
 				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
 				// 배열 정보를 출력한다.
 				// 짝수값만의 합과 평균을 출력한다.
-				System.out.println("5~9사이의 숫자를 입력해주세요.");
-				int a = sc.nextInt();
-				int[] a3 = new int[a];
+
+				
+				int a;
+				while (true) {
+					System.out.println("5~9사이의 숫자를 입력해주세요.");
+					a = sc.nextInt();
+					if (a < 5 || a > 9) {
+						System.out.println("잘못된 입력 범위입니다.");
+						continue;
+					}
+					break;
+				}
+				int[] a3 = new int [a];
+
 				Random r = new Random();
 
-				for (int i = 0; i < a3.length; i++) {
-					a3[i] = r.nextInt(9) + 1;
+				
+				
+				for (int i=0 ; i<a3.length ; i++) {
+					a3[i] = r.nextInt(9)+1;
+
 				}
 
 				System.out.println(Arrays.toString(a3));
@@ -107,7 +123,15 @@ public class Ws {
 						cnt++;
 					}
 				}
-				avg = sum * (1.0) / cnt;
+
+				
+				if ( sum != 0) {
+					avg = sum*(1.0) / cnt ;
+				}else {
+					avg = 0;
+				}
+				
+				
 
 				System.out.printf(" \n 짝수값의 합 : %d, 짝수값의 평균 : %f \n ", sum, avg);
 
