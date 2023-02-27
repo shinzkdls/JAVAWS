@@ -47,7 +47,7 @@ public class Ws {
 
 				// 합과 평균
 				avg1 = sum1 / (arr.length * 1.0);
-				System.out.printf("합은 %d, 평균은 %4.2f 입니다 \n", sum1, avg1);
+				System.out.printf("합은 %d, 평균은 %4.2f 입니다 \n\n", sum1, avg1);
 
 			} else if (cmd.equals("a2")) {
 				// 5~9까지의 숫자를 입력 받는다.
