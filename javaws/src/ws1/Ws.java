@@ -20,37 +20,43 @@ public class Ws {
 				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
 				// 배열 정보를 출력한다.
 				// 배결의 합과 평균을 출력한다.
-				System.out.println("5~9까지의 숫자를 입력하세요..");
-				int a = sc.nextInt();
-				
-				int arr[] = new int[a];
-				
+				int a;
+				while (true) {
+					System.out.println("5~9까지의 숫자를 입력하세요..");
+					a = sc.nextInt();
+					if (a < 5 || a > 9) {
+						System.out.println("잘못된 입력 범위입니다.");
+						continue;
+					}
+					break;
+				}
+
+				int [] arr = new int[a];
 				Random r = new Random();
-				
+
 				int sum1 = 0;
 				double avg1 = 0;
-				
+
 				for (int i = 0; i < arr.length; i++) {
 					arr[i] = r.nextInt(9) + 1;
 					sum1 += arr[i];
 				}
 
+				// 배열정보 출력
 				System.out.println(Arrays.toString(arr));
-				
-				avg1 = sum1 / (arr.length*1.0);
-				System.out.printf("합은 %d, 평균은 %4.2f \n 입니다", sum1, avg1);
-				
-					
-			
-					
+
+				// 합과 평균
+				avg1 = sum1 / (arr.length * 1.0);
+				System.out.printf("합은 %d, 평균은 %4.2f 입니다 \n", sum1, avg1);
+
 			} else if (cmd.equals("a2")) {
 				// 5~9까지의 숫자를 입력 받는다.
 				System.out.println("Input Number 5~9...");
 				int a2Number = sc.nextInt();
-				
+
 				// 입력 받은 숫자만큼 배열을 생성 하고
 				int arr[] = new int[a2Number];
-				
+
 				// 1~9까지의 랜덤한 숫자를 배열에 넣는다.
 				Random r = new Random();
 
@@ -60,21 +66,21 @@ public class Ws {
 
 				// 배열 정보를 출력한다.
 				System.out.println(Arrays.toString(arr));
-				
+
 				// 짝수 번재 숫자들의 합과 평균을 출력한다.
 				int sum = 0;
 				double avg = 0.0;
 				int cnt = 0;
-				
-				for (int i=0; i <arr.length ; i++) {
-					if (i%2 == 0) {
+
+				for (int i = 0; i < arr.length; i++) {
+					if (i % 2 == 0) {
 						sum += arr[i];
 						cnt++;
-					}					
+					}
 				}
-				avg = sum / (cnt*1.0);
+				avg = sum / (cnt * 1.0);
 				System.out.printf("합계는 %d, 평균은 %4.2f\n\n", sum, avg);
-				
+
 			} else if (cmd.equals("a3")) {
 				// 5~9까지의 숫자를 입력 받는다.
 				// 입력 받은 숫자만큼 배열을 생성 하고
@@ -83,29 +89,28 @@ public class Ws {
 				// 짝수값만의 합과 평균을 출력한다.
 				System.out.println("5~9사이의 숫자를 입력해주세요.");
 				int a = sc.nextInt();
-				int[] a3 = new int [a];
+				int[] a3 = new int[a];
 				Random r = new Random();
-				
-				for (int i=0 ; i<a3.length ; i++) {
-					a3[i] = r.nextInt(9)+1;
+
+				for (int i = 0; i < a3.length; i++) {
+					a3[i] = r.nextInt(9) + 1;
 				}
 
 				System.out.println(Arrays.toString(a3));
 
-				int sum = 0; 
+				int sum = 0;
 				double avg = 0.0;
 				int cnt = 0;
-				for (int data:a3) {
-					if( data%2==0) {
+				for (int data : a3) {
+					if (data % 2 == 0) {
 						sum += data;
 						cnt++;
 					}
 				}
-				avg = sum*(1.0) / cnt ;
-				
+				avg = sum * (1.0) / cnt;
+
 				System.out.printf(" \n 짝수값의 합 : %d, 짝수값의 평균 : %f \n ", sum, avg);
-				
-			
+
 			} else if (cmd.equals("a4")) {
 				// 5~9까지의 숫자를 2개 입력 받는다.
 				// 2차원 배열을 만든다.
