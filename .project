@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>JAVAWS</name>
+=======
+	<name>javaws</name>
+>>>>>>> branch 'main' of https://github.com/shinzkdls/JAVAWS.git
 	<comment></comment>
 	<projects>
 	</projects>
